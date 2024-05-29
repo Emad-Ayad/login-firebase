@@ -1,9 +1,6 @@
 
-import 'dart:developer';
-
 import 'package:login/auth/auth_service.dart';
 import 'package:login/auth/signup_screen.dart';
-import 'package:login/home_screen.dart';
 import 'package:login/widgets/button.dart';
 import 'package:login/widgets/textfield.dart';
 import 'package:flutter/material.dart';
@@ -76,19 +73,9 @@ class _LoginScreenState extends State<LoginScreen> {
     MaterialPageRoute(builder: (context) => const SignupScreen()),
   );
 
-  goToHome(BuildContext context) => Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const HomeScreen()),
-  );
-
   _signIn() async {
-    final user =
     await _auth.logInUserWithEmailAndPassword(
         _email.text, _password.text);
-    if (user !=null){
-      log("You LogedIn Successfully");
-      goToHome(context);
-    }
   }
 
 

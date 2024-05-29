@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
               label: "Sign Out",
               onPressed: () {
                 _auth.signOut();
-                goToLogin(context);
               },
             )
           ],
@@ -32,9 +31,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  goToLogin(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
-      );
 }

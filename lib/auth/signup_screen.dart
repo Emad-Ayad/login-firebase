@@ -1,6 +1,4 @@
-import 'dart:developer';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:login/auth/auth_service.dart';
 import 'package:login/auth/login_screen.dart';
 import 'package:login/home_screen.dart';
@@ -92,11 +90,7 @@ class _SignupScreenState extends State<SignupScreen> {
       );
 
   _signUp() async {
-    final user =
         await _auth.createUserWithEmailAndPassword(_email.text, _password.text);
-    if (user != null) {
-      log("You SignedUp Successfully");
-      goToHome(context);
-    }
+        Navigator.pop(context);
   }
 }
